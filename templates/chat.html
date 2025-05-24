@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Imbos Chat</title>
+    <link rel="stylesheet" href="/static/chat.css">
+</head>
+<body>  
+  <div class="chat-container">
+    <div id="messages" class="messages"></div>
+    <form id="messageForm">
+      <input type="text" id="messageInput" placeholder="Напиши что-нибудь..." autocapitalize="off">
+      <button type="submit">Отправить</button>
+      <div id="usernameDisplay" class="user-banner">
+       Ты вошёл как: <span id="usernameText"></span>
+       <button id="logoutBtn" style="margin-left: 15px; padding: 5px 10px; cursor: pointer;">Выйти</button>
+      </div>
+    </form>
+  </div>
+
+  <script src="/static/chat.js"></script>
+</body>
+</html>

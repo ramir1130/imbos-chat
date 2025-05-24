@@ -1,0 +1,22 @@
+document.getElementById("loginForm").addEventListener("submit", function(e) {
+    e.preventDefault();
+    
+    const username = e.target.username.value;
+    const password = e.target.password.value;
+  
+    fetch("/login", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ username, password })
+    })
+    .then(res => res.json())
+    .then(data => {
+      if (data.success) {
+        localStorage.setItem("username", username);
+        alert("Успешный вход!");
+        window.location.href = "/chat";
+      } else {
+        alert("Ошибка входа: " + data.message);
+      }
+    });
+  });
